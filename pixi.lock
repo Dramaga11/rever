@@ -9793,7 +9793,7 @@ packages:
 - pypi: ./
   name: re-ver
   version: 0.5.1
-  sha256: 14370261b94b45812f18c6bec5a1b399695a005ffa4d6deafad087a836ef007a
+  sha256: 46fb5cf0534e423fb3885de0b6b5c664d5e245581505e10253292eec37e56f73
   requires_dist:
   - xonsh
   - lazyasd
