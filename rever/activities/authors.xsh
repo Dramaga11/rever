@@ -50,7 +50,7 @@ class Authors(Activity):
 
         which the template is formatted with.
     :$AUTHORS_FORMAT: str, the string that formats each author in the author file.
-        The default is ``"* {name}\n"``. The valid fields are all of those present
+        The default is ``"* {name}\\n"``. The valid fields are all of those present
         in the author metadata (see below).
     :$AUTHORS_LATEST: str, file to write just the latest contribuors to, i.e.
         this is the listing of the contributors for just this release.

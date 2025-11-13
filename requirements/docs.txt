@@ -1,9 +1,0 @@
-xonsh>=0.9.20
-lazyasd
-cloud_sptheme
-numpydoc
-Sphinx
-bibtexparser
-github3.py
-pprintpp
-ruamel.yaml
