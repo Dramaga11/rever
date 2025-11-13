@@ -24,6 +24,9 @@ jobs:
         run: |
           git config --global user.name "GitHub Workflow"
           git config --global user.email bot@example.com
+      - name: Enable conda-forge channels (needed by conda tests)
+        run: |
+          pixi run -e dev conda config --add channels conda-forge
       - name: pytest
         if: ${{ startsWith(matrix.os, 'ubuntu') }}
         run: pixi run -e ${{ matrix.environment }} test -v
