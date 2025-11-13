@@ -33,17 +33,6 @@ Repository = "https://github.com/regro/rever.git"
 Issues = "https://github.com/regro/rever/issues"
 Changelog = "https://github.com/regro/rever/blob/master/CHANGELOG.rst"
 
-# WARNING!!! Do not use setuptools 'console_scripts'
-# It validates the depenendcies everytime the
-# 'rever' command is run. This validation adds ~0.2 sec. to the startup
-# time of xonsh - for every single xonsh run.  This prevents us from
-# reaching the goal of a startup time of < 0.1 sec.  So never ever write
-# the following:
-#
-#     'console_scripts': ['rever = rever.main:main'],
-#
-# END WARNING
-# TODO: Test whether this is still an issue.
 [project.scripts]
 rever = "rever.main:main"
 
