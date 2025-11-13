@@ -4,7 +4,7 @@ import re
 import datetime
 
 from lazyasd import lazyobject
-from xonsh.lib.os import rmtree, indir
+from xonsh.api.os import rmtree, indir
 
 
 def make_vcs_dispatcher(vcsfuncs, name='vcs_dispatcher',

@@ -100,7 +100,7 @@ So for example, the following configuration,
 
 **rever.xsh:**
 
-.. code-block:: rever
+.. code-block:: xonsh
 
     $PROJECT = "acme"
     $ACTIVITIES = ["authors"]

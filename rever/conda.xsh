@@ -41,13 +41,15 @@ def run_in_conda_env(packages, envname='rever-env'):
     ...     ./setup.py test
 
     """
+    if env_exists(envname):
+        conda remove -y -n @(envname) --all
+    conda create -y -n @(envname) @(packages)
     try:
-        if env_exists(envname):
-            conda remove -y -n @(envname) --all
-        conda create -y -n @(envname) @(packages)
         conda_init()
         conda activate @(envname)
-        yield
+        try:
+            yield
+        finally:
+            conda deactivate
     finally:
-        conda deactivate
         conda remove -y -n @(envname) --all

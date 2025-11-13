@@ -24,7 +24,7 @@ maintainers = [
   { name = "Anthony Scopatz" },
   { name = "Julian Rüth", email = "julian.rueth@fsfe.org" },
 ]
-dependencies = ["xonsh", "lazyasd", "ruamel.yaml", "github3.py >= 2", "bibtexparser", "setuptools"]
+dependencies = ["xonsh >= 0.18.0", "lazyasd", "ruamel.yaml", "github3.py >= 2", "bibtexparser", "setuptools"]
 
 [project.urls]
 Homepage = "https://github.com/regro/rever"
@@ -33,17 +33,6 @@ Repository = "https://github.com/regro/rever.git"
 Issues = "https://github.com/regro/rever/issues"
 Changelog = "https://github.com/regro/rever/blob/master/CHANGELOG.rst"
 
-# WARNING!!! Do not use setuptools 'console_scripts'
-# It validates the depenendcies everytime the
-# 'rever' command is run. This validation adds ~0.2 sec. to the startup
-# time of xonsh - for every single xonsh run.  This prevents us from
-# reaching the goal of a startup time of < 0.1 sec.  So never ever write
-# the following:
-#
-#     'console_scripts': ['rever = rever.main:main'],
-#
-# END WARNING
-# TODO: Test whether this is still an issue.
 [project.scripts]
 rever = "rever.main:main"
 
@@ -54,7 +43,7 @@ packages = ["rever", "rever.activities"]
 rever = ["*.xsh"]
 "rever.activities" = ["*.xsh"]
 
-[tool.pixi.project]
+[tool.pixi.workspace]
 channels = ["conda-forge"]
 platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64", "win-64"]
 
@@ -66,8 +55,9 @@ python-310 = ["test", "python-310"]
 python-311 = ["test", "python-311"]
 python-312 = ["test", "python-312"]
 python-313 = ["test", "python-313"]
-python-314 = ["test", "python-314"]
-dev = ["dev", "doc", "test", "python-314"]
+# "conda" does not really support Python 3.14 yet. See https://github.com/conda-forge/conda-feedstock/pull/277 so we cannot test with 3.14 yet. 
+# python-314 = ["test", "python-314"]
+dev = ["dev", "doc", "test", "python-313"]
 
 [tool.pixi.feature.python-310.dependencies]
 python = "3.10.*"
@@ -81,15 +71,14 @@ python = "3.12.*"
 [tool.pixi.feature.python-313.dependencies]
 python = "3.13.*"
 
-[tool.pixi.feature.python-314.dependencies]
-python = "3.14.*"
-
 [tool.pixi.feature.test.dependencies]
 pytest = "*"
 pytest-flake8 = "*"
 pytest-cov = "*"
 pytest-timeout = "*"
 pip = "*"
+conda = "*"
+git = "*"
 
 [tool.pixi.feature.dev.dependencies]
 
