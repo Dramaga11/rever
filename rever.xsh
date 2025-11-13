@@ -7,7 +7,7 @@ $PYPI_SIGN = False
 
 $VERSION_BUMP_PATTERNS = [
     ('rever/__init__.py', r'__version__\s*=.*', "__version__ = '$VERSION'"),
-    ('setup.py', r'version\s*=.*,', "version='$VERSION',")
+    ('pyproject.toml', r'version\s*=.*,', 'version = "$VERSION"')
     ]
 $CHANGELOG_FILENAME = 'CHANGELOG.rst'
 $CHANGELOG_TEMPLATE = 'TEMPLATE.rst'
