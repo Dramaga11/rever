@@ -63,7 +63,7 @@ class Changelog(Activity):
     :$CHANGELOG_CATEGORY_TITLE_FORMAT: str or callable, a format string with ``{category}``
         entry for formatting changelog and template category titles. If this is a callable,
         it is a function which takes a single category argument and returns the title string.
-        The default is ``"**{category}:**\n\n"``.
+        The default is ``"**{category}:**\\n\\n"``.
     :$CHANGELOG_AUTHORS_TITLE: str or bool, If this is a non-empty string and the ``authors``
         activitiy is being run, this will append an authors section to this changelog entry
         that contains all of the authors that contributed to this version. This string is
@@ -72,7 +72,7 @@ class Changelog(Activity):
     :$CHANGELOG_AUTHORS_FORMAT: str, this is a format string that formats each author who
         contributed to this release, if an authors section will be appened. This is
         evaluated in the context of the authors, see the ``authors`` activity for more
-        details on the available fields. The default is ``"* {name}\n"``.
+        details on the available fields. The default is ``"* {name}\\n"``.
     """
 
     def __init__(self, *, deps=frozenset()):
