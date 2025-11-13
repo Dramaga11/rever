@@ -13,10 +13,7 @@ import glob
 import builtins
 import inspect
 import importlib
-try:
-    import pprintpp as pprint
-except ImportError:
-    import pprint
+import pprintpp as pprint
 
 os.environ['XONSH_DEBUG'] = '1'
 
@@ -392,4 +389,4 @@ with environ.context():
 
 builtins.__xonsh__.history = None
 builtins.__xonsh__.env = {}
-builtins.__xonsh__.commands_cache = CommandsCache()
+builtins.__xonsh__.commands_cache = CommandsCache(env=builtins.__xonsh__.env)
