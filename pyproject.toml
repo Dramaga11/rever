@@ -24,7 +24,7 @@ maintainers = [
   { name = "Anthony Scopatz" },
   { name = "Julian Rüth", email = "julian.rueth@fsfe.org" },
 ]
-dependencies = ["xonsh", "lazyasd", "ruamel.yaml", "github3.py >= 2", "bibtexparser", "setuptools"]
+dependencies = ["xonsh >= 0.18.0", "lazyasd", "ruamel.yaml", "github3.py >= 2", "bibtexparser", "setuptools"]
 
 [project.urls]
 Homepage = "https://github.com/regro/rever"

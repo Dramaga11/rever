@@ -10054,9 +10054,9 @@ packages:
 - pypi: ./
   name: re-ver
   version: 0.5.1
-  sha256: 342c379e0805e3592478786d0f500723f1dffb9f6eedb37fabfc24899f75b856
+  sha256: 6e58b7ea94b0ee6643f710a2aeb60a64d98d0847b15384eb6913b2cbf8db46b4
   requires_dist:
-  - xonsh
+  - xonsh>=0.18.0
   - lazyasd
   - ruamel-yaml
   - github3-py>=2
