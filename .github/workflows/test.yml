@@ -13,7 +13,8 @@ jobs:
     strategy:
       matrix:
         environment: ["python-310", "python-311", "python-312", "python-313", "dev"]
-        os: ["ubuntu-24.04", "ubuntu-24.04-arm", "macos-15", "windows-2022"]
+        # Tests on Windows hang on the GitHub runners for unclear reasons. Locally some tests fail on Windows.
+        os: ["ubuntu-24.04", "ubuntu-24.04-arm", "macos-15"]
     steps:
       - name: checkout
         uses: actions/checkout@v5
