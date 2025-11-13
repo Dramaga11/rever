@@ -5261,7 +5261,7 @@ packages:
 - pypi: ./
   name: re-ver
   version: 0.5.1
-  sha256: 766829b7f6c1ab130420194f46e1c3ca9137d4baa7cfc4bdcd14dc9c33e4a005
+  sha256: b2f10116146a8d7467b2caa7eff6f509ed9e62b4aa5082869988a72919681bb9
   requires_dist:
   - xonsh
   - lazyasd
