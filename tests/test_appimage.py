@@ -75,4 +75,4 @@ def test_appimage(gitrepo):
     vcsutils.track('.')
     vcsutils.commit('Some versioned files')
     env_main(['42.1.1'])
-    assert Path('xonsh-x86_64.AppImage') in Path('.').glob('*')
+    assert Path('xonsh-x86_64.AppImage') in set(Path('.').glob('*'))
