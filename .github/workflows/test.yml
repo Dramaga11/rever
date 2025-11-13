@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        environment: ["python-310", "python-311", "python-312", "python-313", "python-314", "dev"]
+        environment: ["python-310", "python-311", "python-312", "python-313", "dev"]
         os: ["ubuntu-24.04", "ubuntu-24.04-arm", "macos-15", "windows-2022"]
     steps:
       - name: checkout
@@ -27,7 +27,7 @@ jobs:
       - name: pytest
         if: ${{ startsWith(matrix.os, 'ubuntu') }}
         run: pixi run -e ${{ matrix.environment }} test -v
-      - name: pytest (no appimage)
+      - name: pytest (non-Linux)
         # AppImage tests are not working on non-Linux systems because no docker is installed on the runners.
         if: ${{ !startsWith(matrix.os, 'ubuntu') }}
         run: pixi run -e ${{ matrix.environment }} test -v --ignore-glob 'tests/test_appimage.py'

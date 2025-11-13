@@ -55,8 +55,9 @@ python-310 = ["test", "python-310"]
 python-311 = ["test", "python-311"]
 python-312 = ["test", "python-312"]
 python-313 = ["test", "python-313"]
-python-314 = ["test", "python-314"]
-dev = ["dev", "doc", "test", "python-314"]
+# "conda" does not really support Python 3.14 yet. See https://github.com/conda-forge/conda-feedstock/pull/277 so we cannot test with 3.14 yet. 
+# python-314 = ["test", "python-314"]
+dev = ["dev", "doc", "test", "python-313"]
 
 [tool.pixi.feature.python-310.dependencies]
 python = "3.10.*"
@@ -79,6 +80,7 @@ pytest-flake8 = "*"
 pytest-cov = "*"
 pytest-timeout = "*"
 pip = "*"
+conda = "*"
 
 [tool.pixi.feature.dev.dependencies]
 
