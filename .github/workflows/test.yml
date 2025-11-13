@@ -20,6 +20,10 @@ jobs:
         with: { submodules: recursive }
       - uses: prefix-dev/setup-pixi@v0.9.3
         with: { pixi-version: v0.59.0 }
+      - name: git config
+        run: |
+          git config --global user.name "GitHub Workflow"
+          git config --global user.email bot@example.com
       - name: pytest
         run: pixi run -e ${{ matrix.environment }} test
       - name: cli
