@@ -78,6 +78,7 @@ pytest-cov = "*"
 pytest-timeout = "*"
 pip = "*"
 conda = "*"
+git = "*"
 
 [tool.pixi.feature.dev.dependencies]
 
